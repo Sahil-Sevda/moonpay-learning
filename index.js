@@ -33,13 +33,16 @@ app.get('/sign-url', (req, res) => {
   console.log(isSignatureValid)
   res.redirect(url);
 });
-app.get('/state',async(req,res)=>{
-  console.log(req.query,52)
+app.post('/state',async(req,res)=>{
+  // console.log(req.query,52)
 
-  sdk.auth(process.env.PUB_KEY);
-  sdk.getBuyTransaction({transactionId:req.query.transactionId})
-    .then(({ data }) => console.log(data))
-    .catch(err => console.error(err));
+  // sdk.auth(process.env.PUB_KEY);
+  // sdk.getBuyTransaction({transactionId:req.query.transactionId})
+  //   .then(({ data }) => console.log(data))
+  //   .catch(err => console.error(err));
+    const data = req.body;  
+    console.log(`Received data: ${JSON.stringify(data)}`);
+    res.status(200).json({ status: 'success' });
 })
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
