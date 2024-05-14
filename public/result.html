@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Result</title>
+</head>
+<body>
+  <h1>Purchase Result</h1>
+  <p id="message"></p>
+  <pre id="orderDetails"></pre>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const success = params.get('success');
+    const message = success === 'true' ? 'Purchase successful!' : 'Error creating order.';
+    const order = JSON.parse(decodeURIComponent(params.get('order')));
+
+    document.getElementById('message').textContent = message;
+    document.getElementById('orderDetails').textContent = JSON.stringify(order, null, 2);
+  </script>
+</body>
+</html>

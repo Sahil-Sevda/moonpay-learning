@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moonpay Integration</title>
+</head>
+<body>
+  <h1>Moonpay Integration</h1>
+
+  <div id="moonpay-widget"></div>
+
+  <script>
+    // Dynamically load the Moonpay script
+    const script = document.createElement('script');
+    script.src = 'https://cdn.moonpay.io/v2/moonpay.js';
+    script.onload = () => {
+      // Initialize the Moonpay widget after the script is loaded
+      MoonPay.init('pk_test_cgTNoX4RbR77ruKrV4TuxZQTMiave5M', {
+        // Configuration options (if any)
+      });
+    };
+    document.head.appendChild(script);
+  </script>
+</body>
+</html>
+
