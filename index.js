@@ -19,11 +19,10 @@ app.get('/sign-url', (req, res) => {
     apiKey: process.env.PUB_KEY,
     currencyCode: 'matic',
     baseCurrencyCode:'usd',
-    email:'sahil27.vdoit@gmail.com',
     showWalletAddressForm:true,
     walletAddress:process.env.wallet,
     quoteCurrencyAmount:'true',
-    externalCustomerId:'sahil27.vdoit@gmail.com',
+    theme:'light'
   };
   const url = moonPay.url.generate({ flow: 'buy', params });
   console.log(url)
