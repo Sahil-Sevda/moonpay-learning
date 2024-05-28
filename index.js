@@ -32,16 +32,29 @@ app.get('/sign-url', (req, res) => {
   console.log(isSignatureValid)
   res.redirect(url);
 });
+
+
 app.post('/created',async(req,res)=>{
+
   const data = req.body;  
   console.log(`Received data at created: ${JSON.stringify(data)}`);
   res.status(200).json({ status: 'success' });
+
 })
-app.post('/state',async(req,res)=>{
+
+
+app.post('/completed',async(req,res)=>{
     const data = req.body;  
-    console.log(`Received data: ${JSON.stringify(data)}`);
+    console.log(`Received data completed: ${JSON.stringify(data)}`);
     res.status(200).json({ status: 'success' });
 })
+
+app.post('/failed',async(req,res)=>{
+  const data = req.body;  
+  console.log(`Received data failed: ${JSON.stringify(data)}`);
+  res.status(200).json({ status: 'success' });
+})
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
