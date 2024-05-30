@@ -45,7 +45,7 @@ app.post('/created',async(req,res)=>{
 
 app.post('/completed',async(req,res)=>{
     const data = req.body;  
-    console.log(`Received data completed: ${JSON.stringify(data)}`);
+    console.log(`Received data completed: ${data}`);
     res.status(200).json({ status: 'success' });
 })
 
