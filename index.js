@@ -38,6 +38,7 @@ app.post('/created',async(req,res)=>{
 
   const data = JSON.stringify(req.body);  
   // console.log(`Received data at created: ${JSON.stringify(req.body)}`);
+  console.log(data,41)
   console.log(data.type,data.data.status,new Date());
   res.status(200).json({ status: 'success' });
   
